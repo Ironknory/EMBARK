@@ -7,7 +7,7 @@ from utils.model import combineMPUF, combinerMPUF
 from utils.data import makeData, loadData
 
 if __name__ == "__main__":
-    config = Config("./data/5_64_MPUF_5_30k.csv", makedata=True)
+    config = Config("./data/5_64_MPUF_10_30k.csv", makedata=True)
 
     if config.PUF_type == 'MPUF':
         model = combineMPUF(config.Snum, config.PUF_length, device=config.device).to(config.device)

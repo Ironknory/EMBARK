@@ -43,7 +43,7 @@ class simpleDataLoader:
     def __len__(self):
         return len(self.index)
     
-def makeData(filename, data_size, PUFSample, with_reliability=False, repetition=10):
+def makeData(filename, data_size, PUFSample, with_reliability=False, repetition=11):
     dataset = []
     length = PUFSample.PUF_length + 1
     for _ in range(data_size):
@@ -106,7 +106,7 @@ def loadTestData(filename, batch_size, device=torch.device('cuda'), with_reliabi
     np.random.shuffle(dataSet)
 
     dataSize = dataSet.shape[0]
-    validSize = int(dataSize * 0.9)
+    validSize = int(dataSize * 0.1)
     testSize = dataSize - validSize
 
     if with_reliability is True:
